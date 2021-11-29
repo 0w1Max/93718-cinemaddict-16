@@ -16,7 +16,6 @@ const footerElement = document.querySelector('.footer');
 renderTemplate(headerElement, createProfileElement(), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createNavElement(), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createSortElement(), RenderPosition.BEFOREEND);
-
 renderTemplate(mainElement, createFilmsListElement(), RenderPosition.BEFOREEND);
 
 const filmsListContainerElement = document.querySelector('.films-list__container');
@@ -26,9 +25,7 @@ for (let index = 0; index < FILM_COUNT; index++) {
 }
 
 renderTemplate(filmsListContainerElement, createShowMoreButtonElement(), RenderPosition.AFTEREND);
-
 renderTemplate(footerElement, createFooterStatisticsElement(), RenderPosition.BEFOREEND);
-
 renderTemplate(footerElement, createFilmDetailsElement(), RenderPosition.AFTEREND);
 
 const filmDetailsElement = document.querySelector('.film-details');
