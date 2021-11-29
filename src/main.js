@@ -12,8 +12,9 @@ renderTemplate(headerElement, createProfileElement(), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createNavElement(), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createSortElement(), RenderPosition.BEFOREEND);
 
+const FILMS_COUNT = 5;
 renderTemplate(mainElement, createFilmsListElement(), RenderPosition.BEFOREEND);
 const filmsListElement = document.querySelector('.films-list__container');
-for (let index = 0; index < 5; index++) {
+for (let index = 0; index < FILMS_COUNT; index++) {
   renderTemplate(filmsListElement, createFilmCardElement(), RenderPosition.BEFOREEND);
 }
