@@ -44,3 +44,14 @@ const generateFilmTitleAndPoster = () => {
   const randomIndex = getRandomInteger(0, filmsTitlesAndPosters.length - 1);
   return filmsTitlesAndPosters[randomIndex];
 };
+
+const generateFilm = () => {
+  const newFilmTitleAndPoster = generateFilmTitleAndPoster();
+
+  return {
+    title: newFilmTitleAndPoster.title,
+    poster: `${POSTERS_DIR}${newFilmTitleAndPoster.poster}`
+  };
+};
+
+export {generateFilm};
