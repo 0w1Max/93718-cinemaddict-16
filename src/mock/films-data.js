@@ -1,11 +1,5 @@
-// Функция из интернета по генерации случайного числа из диапазона
-// Источник - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_random
-const getRandomInteger = (a = 0, b = 1) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-
-  return Math.floor(lower + Math.random() * (upper - lower + 1));
-};
+import {getRandomInteger} from '../utils.js';
+import {generateComments} from './comments-data.js';
 
 const POSTERS_DIR = '/images/posters/';
 
@@ -62,20 +56,6 @@ const generateDescription = () => {
   const randomIndex = getRandomInteger(0, filmDescriptions.length - 1);
 
   return filmDescriptions.filter((description, index) => index <= randomIndex).join('');
-};
-
-const generateComments = () => {
-  const filmComments = [
-    'Interesting setting and a good cast',
-    'Booooooooooring',
-    'Very very old. Meh',
-    'Almost two hours? Seriously?',
-    'LOL'
-  ];
-
-  const randomIndex = getRandomInteger(0, filmComments.length - 1);
-
-  return filmComments.filter((description, index) => index <= randomIndex);
 };
 
 const generateFilm = () => {
