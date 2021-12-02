@@ -6,8 +6,12 @@ import {createFilmCardElement} from './view/film-card-view.js';
 import {createShowMoreButtonElement} from './view/show-more-buttom-view.js';
 import {createFooterStatisticsElement} from './view/footer-statistics-view.js';
 import {createFilmDetailsElement} from './view/film-details-view.js';
+import {generateFilm} from './mock/films-data.js';
 
-const FILM_COUNT = 5;
+const FILMS_COUNT = 28;
+const MAX_FILMS_LINE = 5;
+
+const films = Array.from({length: FILMS_COUNT}, generateFilm);
 
 const headerElement = document.querySelector('.header');
 const mainElement = document.querySelector('.main');
@@ -20,11 +24,10 @@ renderTemplate(mainElement, createFilmsListElement(), RenderPosition.BEFOREEND);
 
 const filmsListContainerElement = document.querySelector('.films-list__container');
 
-for (let index = 0; index < FILM_COUNT; index++) {
-  renderTemplate(filmsListContainerElement, createFilmCardElement(), RenderPosition.BEFOREEND);
+for (let index = 0; index < MAX_FILMS_LINE; index++) {
+  renderTemplate(filmsListContainerElement, createFilmCardElement(films[index]), RenderPosition.BEFOREEND);
 }
 
-renderTemplate(filmsListContainerElement, createShowMoreButtonElement(), RenderPosition.AFTEREND);
 renderTemplate(footerElement, createFooterStatisticsElement(), RenderPosition.BEFOREEND);
 renderTemplate(footerElement, createFilmDetailsElement(), RenderPosition.AFTEREND);
 
