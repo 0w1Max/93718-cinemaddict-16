@@ -1,5 +1,5 @@
 const createFilmDetailsElement = (film) => {
-  const {title, poster, description, comments} = film;
+  const {title, poster, description, genres, comments} = film;
 
   return `<section class="film-details">
       <form class="film-details__inner" action="" method="get">
@@ -18,7 +18,7 @@ const createFilmDetailsElement = (film) => {
               <div class="film-details__info-head">
                 <div class="film-details__title-wrap">
                   <h3 class="film-details__title">${title}</h3>
-                  <p class="film-details__title-original">Original: The Great Flamarion</p>
+                  <p class="film-details__title-original">Original: ${title}</p>
                 </div>
 
                 <div class="film-details__rating">
@@ -54,7 +54,7 @@ const createFilmDetailsElement = (film) => {
                 <tr class="film-details__row">
                   <td class="film-details__term">Genres</td>
                   <td class="film-details__cell">
-                    <span class="film-details__genre">Drama</span>
+                    <span class="film-details__genre">${genres}</span>
                     <span class="film-details__genre">Film-Noir</span>
                     <span class="film-details__genre">Mystery</span></td>
                 </tr>
