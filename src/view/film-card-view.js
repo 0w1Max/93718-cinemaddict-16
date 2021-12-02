@@ -1,5 +1,5 @@
-const createFilmCardElement = (task) => {
-  const {title, poster, description, comments} = task;
+const createFilmCardElement = (film) => {
+  const {title, poster, description, comments} = film;
 
   return `<article class="film-card">
     <a class="film-card__link">

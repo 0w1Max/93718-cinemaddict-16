@@ -5,13 +5,17 @@ import {createFilmsListElement} from './view/films-list-view.js';
 import {createFilmCardElement} from './view/film-card-view.js';
 import {createShowMoreButtonElement} from './view/show-more-buttom-view.js';
 import {createFooterStatisticsElement} from './view/footer-statistics-view.js';
-import {createFilmDetailsElement} from './view/film-details-view.js';
+import {createFilmDetailsElement, createCommentsElement} from './view/film-details-view.js';
 import {generateFilm} from './mock/films-data.js';
+import {generateComments} from './mock/comments-data.js';
 
 const FILMS_COUNT = 28;
 const MAX_FILMS_LINE = 5;
 
 const films = Array.from({length: FILMS_COUNT}, generateFilm);
+const comments = Array.from({length: films[0].comments.length}, generateComments);
+// console.log(films);
+// console.log(comments);
 
 const headerElement = document.querySelector('.header');
 const mainElement = document.querySelector('.main');
@@ -29,10 +33,16 @@ for (let index = 0; index < MAX_FILMS_LINE; index++) {
 }
 
 renderTemplate(footerElement, createFooterStatisticsElement(), RenderPosition.BEFOREEND);
-renderTemplate(footerElement, createFilmDetailsElement(), RenderPosition.AFTEREND);
+renderTemplate(mainElement, createFilmDetailsElement(films[0]), RenderPosition.AFTEREND);
 
 const filmDetailsElement = document.querySelector('.film-details');
-filmDetailsElement.style.display = 'none';
+const filmCommentsElement = document.querySelector('.film-details__comments-list');
+
+for (let index = 0; index < films[0].comments.length; index++) {
+  renderTemplate(filmCommentsElement, createCommentsElement(comments[index]), RenderPosition.BEFOREEND);
+}
+
+// filmDetailsElement.style.display = 'none';
 
 if (films.length > MAX_FILMS_LINE) {
   let renderedFilmCount = MAX_FILMS_LINE;

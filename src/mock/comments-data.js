@@ -1,5 +1,7 @@
 import {getRandomInteger} from '../utils.js';
 
+const EMOJI_DIR = '/images/emoji/';
+
 const generateTextComments = () => {
   const textComments = [
     'Interesting setting and a good cast',
@@ -11,7 +13,7 @@ const generateTextComments = () => {
 
   const randomIndex = getRandomInteger(0, textComments.length - 1);
 
-  return textComments.filter((comment, index) => index <= randomIndex);
+  return textComments[randomIndex];
 };
 
 const generateEmoji= () => {
@@ -28,12 +30,13 @@ const generateEmoji= () => {
 };
 
 const generateComments = () => {
-  const filmComments = {
-    'text': generateTextComments(),
-    'emoji': generateEmoji
-  };
+  const newEmoji = generateEmoji();
 
-  return filmComments;
+  return {
+    commentText: generateTextComments(),
+    emoji: newEmoji,
+    emojiUrl: `${EMOJI_DIR}${newEmoji}.png`
+  };
 };
 
-export {generateTextComments, generateComments};
+export {generateComments};
