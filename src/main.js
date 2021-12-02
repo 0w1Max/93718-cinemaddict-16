@@ -33,3 +33,24 @@ renderTemplate(footerElement, createFilmDetailsElement(), RenderPosition.AFTEREN
 
 const filmDetailsElement = document.querySelector('.film-details');
 filmDetailsElement.style.display = 'none';
+
+if (films.length > MAX_FILMS_LINE) {
+  let renderedFilmCount = MAX_FILMS_LINE;
+
+  renderTemplate(filmsListContainerElement, createShowMoreButtonElement(), RenderPosition.AFTEREND);
+
+  const showMoreButton = document.querySelector('.films-list__show-more');
+
+  showMoreButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    films
+      .slice(renderedFilmCount, renderedFilmCount + MAX_FILMS_LINE)
+      .forEach((film) => renderTemplate(filmsListContainerElement, createFilmCardElement(film), RenderPosition.BEFOREEND));
+
+    renderedFilmCount += MAX_FILMS_LINE;
+
+    if (renderedFilmCount >= films.length) {
+      showMoreButton.remove();
+    }
+  });
+}
