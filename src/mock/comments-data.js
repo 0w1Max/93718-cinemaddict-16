@@ -1,7 +1,7 @@
 import {getRandomInteger} from '../utils.js';
 
-const generateComments = () => {
-  const filmComments = [
+const generateTextComments = () => {
+  const textComments = [
     'Interesting setting and a good cast',
     'Booooooooooring',
     'Very very old. Meh',
@@ -9,9 +9,31 @@ const generateComments = () => {
     'LOL'
   ];
 
-  const randomIndex = getRandomInteger(0, filmComments.length - 1);
+  const randomIndex = getRandomInteger(0, textComments.length - 1);
 
-  return filmComments.filter((description, index) => index <= randomIndex);
+  return textComments.filter((comment, index) => index <= randomIndex);
 };
 
-export {generateComments};
+const generateEmoji= () => {
+  const emoji = [
+    'angry',
+    'puke',
+    'sleeping',
+    'smile'
+  ];
+
+  const randomIndex = getRandomInteger(0, emoji.length - 1);
+
+  return emoji[randomIndex];
+};
+
+const generateComments = () => {
+  const filmComments = {
+    'text': generateTextComments(),
+    'emoji': generateEmoji
+  };
+
+  return filmComments;
+};
+
+export {generateTextComments, generateComments};

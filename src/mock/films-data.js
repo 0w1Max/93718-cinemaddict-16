@@ -1,5 +1,5 @@
 import {getRandomInteger} from '../utils.js';
-import {generateComments} from './comments-data.js';
+import {generateTextComments} from './comments-data.js';
 
 const POSTERS_DIR = '/images/posters/';
 
@@ -65,7 +65,7 @@ const generateFilm = () => {
     title: newFilmTitleAndPoster.title,
     poster: `${POSTERS_DIR}${newFilmTitleAndPoster.poster}`,
     description: generateDescription(),
-    comments: generateComments().length
+    comments: generateTextComments().length
   };
 };
 
