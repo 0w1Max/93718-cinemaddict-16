@@ -44,6 +44,65 @@ const FILM_DESCRIPTIONS = [
   'In rutrum ac purus sit amet tempus.'
 ];
 
+const FILM_DIRECTORS = [
+  'Anthony Mann',
+  'Steven Spielberg',
+  'Alfred Hitchcock',
+  'Martin Scorsese',
+  'Christopher Nolan',
+  'James Cameron',
+  'Quentin Tarantino',
+  'Guy Ritchie',
+  'David Fincher',
+  'George Lucas',
+  'Stanley Kubrick',
+  'Peter Jackson'
+];
+
+const FILM_WRITERS = [
+  'Anne Wigton',
+  'Heinz Herald',
+  'Richard Weil',
+  'Stephen King',
+  'James Cameron',
+  'John Hughes',
+  'Aaron Sorkin',
+  'Billy Wilder',
+  'Robert Towne'
+];
+
+const FILM_ACTORS = [
+  'Erich von Stroheim',
+  'Mary Beth Hughes',
+  'Dan Duryea',
+  'Jack Nicholson',
+  'Marlon Brando',
+  'Robert De Niro',
+  'Al Pacino',
+  'Daniel Day-Lewis',
+  'Dustin Hoffman',
+  'Tom Hanks',
+  'Anthony Hopkins',
+  'Paul Newman',
+  'Denzel Washington'
+];
+
+const FILM_COUNTRY = [
+  'USA',
+  'Russia',
+  'Ukraine',
+  'Italy',
+  'United Kingdom',
+  'Sweden',
+  'Japan',
+  'Poland',
+  'Spain',
+  'Germany',
+  'Denmark',
+  'France',
+  'Argentina'
+];
+
 const FILM_GENRES = [
   'Musical',
   'Western',
@@ -53,4 +112,13 @@ const FILM_GENRES = [
   'Mystery'
 ];
 
-export {POSTERS_DIR, FILMS_TITLES_AND_POSTERS, FILM_DESCRIPTIONS, FILM_GENRES};
+export {
+  POSTERS_DIR,
+  FILMS_TITLES_AND_POSTERS,
+  FILM_DESCRIPTIONS,
+  FILM_DIRECTORS,
+  FILM_WRITERS,
+  FILM_ACTORS,
+  FILM_COUNTRY,
+  FILM_GENRES
+};

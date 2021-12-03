@@ -1,4 +1,14 @@
-import {POSTERS_DIR, FILMS_TITLES_AND_POSTERS, FILM_DESCRIPTIONS, FILM_GENRES} from './data.js';
+import {
+  POSTERS_DIR,
+  FILMS_TITLES_AND_POSTERS,
+  FILM_DESCRIPTIONS,
+  FILM_DIRECTORS,
+  FILM_WRITERS,
+  FILM_ACTORS,
+  FILM_COUNTRY,
+  FILM_GENRES
+} from './data.js';
+
 import {getRandomInteger} from '../utils.js';
 import {generateComments} from './comments-data.js';
 
