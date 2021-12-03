@@ -1,3 +1,10 @@
+const createFilmCardDescription = (description) => {
+  const newDescription = description.length > 140 ? `<p class="film-card__description">
+  ${description.substring(0, 139)}...</p>` : `<p class="film-card__description">${description}</p>`;
+
+  return newDescription;
+};
+
 const createFilmCardControlButton = (title, nameButton, isActive) => {
   const activeClass = isActive ? 'film-card__controls-item--active' : '';
 
@@ -29,7 +36,7 @@ const createFilmCardElement = (film) => {
         <span class="film-card__genre">${genres[0]}</span>
       </p>
       <img src="${poster}" alt="" class="film-card__poster">
-      <p class="film-card__description">${description}</p>
+      <p class="film-card__description">${createFilmCardDescription(description)}</p>
       <span class="film-card__comments">${comments.length} comments</span>
     </a>
     <div class="film-card__controls">
