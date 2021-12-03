@@ -1,5 +1,23 @@
+const createFilmDetailsRow = (term, cell) => (
+  `<tr class="film-details__row">
+    <td class="film-details__term">${term}</td>
+    <td class="film-details__cell">${cell}</td>
+  </tr>`
+);
+
+const createGenreElement = (genre) => `<span class="film-details__genre">${genre}</span>`;
+
+const genreText = (genre) => {
+  if (genre.length > 1) {
+    return 'Genres';
+  }
+  return 'Genre';
+};
+
 const createFilmDetailsElement = (film) => {
   const {title, poster, description, genres, comments} = film;
+
+  const genresElemet = genres.map(createGenreElement).join('');
 
   return `<section class="film-details">
       <form class="film-details__inner" action="" method="get">
@@ -51,13 +69,7 @@ const createFilmDetailsElement = (film) => {
                   <td class="film-details__term">Country</td>
                   <td class="film-details__cell">USA</td>
                 </tr>
-                <tr class="film-details__row">
-                  <td class="film-details__term">Genres</td>
-                  <td class="film-details__cell">
-                    <span class="film-details__genre">${genres}</span>
-                    <span class="film-details__genre">Film-Noir</span>
-                    <span class="film-details__genre">Mystery</span></td>
-                </tr>
+                ${createFilmDetailsRow(genreText(genres), genresElemet)}
               </table>
 
               <p class="film-details__film-description">
