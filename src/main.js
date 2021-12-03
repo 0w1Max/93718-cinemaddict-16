@@ -35,14 +35,19 @@ for (let index = 0; index < MAX_FILMS_LINE; index++) {
 renderTemplate(footerElement, createFooterStatisticsElement(), RenderPosition.BEFOREEND);
 renderTemplate(footerElement, createFilmDetailsElement(films[0]), RenderPosition.AFTEREND);
 
-// const filmDetailsElement = document.querySelector('.film-details');
+const filmDetailsElement = document.querySelector('.film-details');
 const filmCommentsElement = document.querySelector('.film-details__comments-list');
+const closeButton = document.querySelector('.film-details__close-btn');
 
 for (let index = 0; index < films[0].comments.length; index++) {
   renderTemplate(filmCommentsElement, createCommentsElement(comments[index]), RenderPosition.BEFOREEND);
 }
 
-// filmDetailsElement.style.display = 'none';
+closeButton.addEventListener('click', (evt) => {
+  evt.preventDefault();
+
+  filmDetailsElement.classList.add('visually-hidden');
+});
 
 if (films.length > MAX_FILMS_LINE) {
   let renderedFilmCount = MAX_FILMS_LINE;
