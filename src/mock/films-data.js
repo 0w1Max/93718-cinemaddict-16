@@ -74,7 +74,7 @@ const generateFilm = () => {
     director: generateFilmDirector(),
     writers: generateFilmWriters(),
     actors: generateFilmActors(),
-    releaseDate: dayjs().format('DD MMMM YYYY'),
+    releaseDate: dayjs(),
     runTime: generateRunTime(),
     country: generateFilmCountry(),
     genres: generateFilmGenres(),

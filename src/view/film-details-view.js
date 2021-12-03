@@ -62,7 +62,7 @@ const createFilmDetailsElement = (film) => {
                 ${createFilmDetailsRow('Director', director)}
                 ${createFilmDetailsRow('Writers', writers)}
                 ${createFilmDetailsRow('Actors', actors)}
-                ${createFilmDetailsRow('Release Date', releaseDate)}
+                ${createFilmDetailsRow('Release Date', releaseDate.format('DD MMMM YYYY'))}
                 ${createFilmDetailsRow('RunTime', runTime)}
                 ${createFilmDetailsRow('Country', country)}
                 ${createFilmDetailsRow(genreText(genres), genresElemet)}
