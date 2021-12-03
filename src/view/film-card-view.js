@@ -1,3 +1,10 @@
+const createFilmCardControlButton = (title, nameButton, isActive) => {
+  const activeClass = isActive ? 'film-card__controls-item--active' : '';
+
+  return `<button class="film-card__controls-item ${activeClass} film-card__controls-item--${nameButton}"
+  type="button">${title}</button>`;
+};
+
 const createFilmCardElement = (film) => {
   const {title,
     poster,
@@ -6,7 +13,10 @@ const createFilmCardElement = (film) => {
     runTime,
     genres,
     description,
-    comments
+    comments,
+    watchlist,
+    watched,
+    favorite
   } = film;
 
   return `<article class="film-card">
@@ -23,9 +33,9 @@ const createFilmCardElement = (film) => {
       <span class="film-card__comments">${comments.length} comments</span>
     </a>
     <div class="film-card__controls">
-      <button class="film-card__controls-item film-card__controls-item--add-to-watchlist" type="button">Add to watchlist</button>
-      <button class="film-card__controls-item film-card__controls-item--mark-as-watched" type="button">Mark as watched</button>
-      <button class="film-card__controls-item film-card__controls-item--favorite" type="button">Mark as favorite</button>
+      ${createFilmCardControlButton('Add to watchlist', 'add-to-watchlist', watchlist)}
+      ${createFilmCardControlButton('Mark as watched', 'mark-as-watched', watched)}
+      ${createFilmCardControlButton('Mark as favorite', 'favorite', favorite)}
     </div>
   </article>`;
 };

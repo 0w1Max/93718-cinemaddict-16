@@ -91,7 +91,7 @@ const generateFilms = () => {
     comments: Array.from({length:getRandomInteger(1,5)},generateComments),
     watchlist: generateBoolean(),
     watched: generateBoolean(),
-    favourite: generateBoolean()
+    favorite: generateBoolean()
   };
 };
 
