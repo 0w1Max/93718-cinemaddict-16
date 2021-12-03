@@ -129,6 +129,16 @@ const EMOJI = [
   'smile'
 ];
 
+const COMMENT_AUTHOR = [
+  'Tim Macovee',
+  'John Doe',
+  'Robert De Niro',
+  'Al Pacino',
+  'Daniel Day-Lewis',
+  'Dustin Hoffman',
+  'Tom Hanks'
+];
+
 export {
   POSTERS_DIR,
   FILMS_TITLES_AND_POSTERS,
@@ -140,5 +150,6 @@ export {
   FILM_GENRES,
   COMMENTS_TEXT,
   EMOJI,
-  EMOJI_DIR
+  EMOJI_DIR,
+  COMMENT_AUTHOR
 };

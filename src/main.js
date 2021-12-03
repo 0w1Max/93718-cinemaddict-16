@@ -33,9 +33,9 @@ for (let index = 0; index < MAX_FILMS_LINE; index++) {
 }
 
 renderTemplate(footerElement, createFooterStatisticsElement(), RenderPosition.BEFOREEND);
-renderTemplate(mainElement, createFilmDetailsElement(films[0]), RenderPosition.AFTEREND);
+renderTemplate(footerElement, createFilmDetailsElement(films[0]), RenderPosition.AFTEREND);
 
-const filmDetailsElement = document.querySelector('.film-details');
+// const filmDetailsElement = document.querySelector('.film-details');
 const filmCommentsElement = document.querySelector('.film-details__comments-list');
 
 for (let index = 0; index < films[0].comments.length; index++) {

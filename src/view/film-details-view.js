@@ -23,6 +23,8 @@ const createFilmDetailsElement = (film) => {
     director,
     writers,
     actors,
+    releaseDate,
+    runTime,
     country,
     genres,
     description,
@@ -60,14 +62,8 @@ const createFilmDetailsElement = (film) => {
                 ${createFilmDetailsRow('Director', director)}
                 ${createFilmDetailsRow('Writers', writers)}
                 ${createFilmDetailsRow('Actors', actors)}
-                <tr class="film-details__row">
-                  <td class="film-details__term">Release Date</td>
-                  <td class="film-details__cell">30 March 1945</td>
-                </tr>
-                <tr class="film-details__row">
-                  <td class="film-details__term">Runtime</td>
-                  <td class="film-details__cell">1h 18m</td>
-                </tr>
+                ${createFilmDetailsRow('Release Date', releaseDate)}
+                ${createFilmDetailsRow('RunTime', runTime)}
                 ${createFilmDetailsRow('Country', country)}
                 ${createFilmDetailsRow(genreText(genres), genresElemet)}
               </table>
@@ -132,7 +128,13 @@ const createFilmDetailsElement = (film) => {
 };
 
 const createCommentsElement = (comment) => {
-  const {commentText, emoji, emojiUrl} = comment;
+  const {
+    commentText,
+    emoji,
+    emojiUrl,
+    commentAuthor,
+    commentDay
+  } = comment;
 
   return `<li class="film-details__comment">
             <span class="film-details__comment-emoji">
@@ -141,8 +143,8 @@ const createCommentsElement = (comment) => {
             <div>
               <p class="film-details__comment-text">${commentText}</p>
               <p class="film-details__comment-info">
-                <span class="film-details__comment-author">Tim Macoveev</span>
-                <span class="film-details__comment-day">2019/12/31 23:59</span>
+                <span class="film-details__comment-author">${commentAuthor}</span>
+                <span class="film-details__comment-day">${commentDay}</span>
                 <button class="film-details__comment-delete">Delete</button>
               </p>
             </div>
