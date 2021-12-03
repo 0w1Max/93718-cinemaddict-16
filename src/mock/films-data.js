@@ -56,13 +56,22 @@ const generateFilmGenres = () => {
 };
 
 const generateRunTime = () => {
-  const hours = getRandomInteger(0, 5);
+  const hours = getRandomInteger(0, 3);
   const minutes = getRandomInteger(0, 59);
 
-  return hours !== 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+  return hours !== 0 ? `${hours}h ${minutes}m` : `${getRandomInteger(15, 59)}m`;
 };
 
-const generateFilm = () => {
+const generateBoolean = () => {
+  const isActive = Boolean(getRandomInteger(0, 1));
+
+  if (!isActive) {
+    return false;
+  }
+  return true;
+};
+
+const generateFilms = () => {
   const newFilmTitleAndPoster = generateFilmTitleAndPoster();
 
   return {
@@ -79,8 +88,11 @@ const generateFilm = () => {
     country: generateFilmCountry(),
     genres: generateFilmGenres(),
     description: generateFilmDescription(),
-    comments: Array.from({length:getRandomInteger(1,5)},generateComments)
+    comments: Array.from({length:getRandomInteger(1,5)},generateComments),
+    watchlist: generateBoolean(),
+    watched: generateBoolean(),
+    favourite: generateBoolean()
   };
 };
 
-export {generateFilm};
+export {generateFilms};

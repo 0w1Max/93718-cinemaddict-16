@@ -7,6 +7,13 @@ const createFilmDetailsRow = (term, cell) => (
 
 const createGenreElement = (genre) => `<span class="film-details__genre">${genre}</span>`;
 
+const createFilmControlButton = (title, nameButton, isActive) => {
+  const activeClass = isActive ? 'film-details__control-button--active' : '';
+
+  return `<button type="button" class="film-details__control-button ${activeClass} film-details__control-button--${nameButton}"
+  id="${nameButton}" name="${nameButton}">${title}</button>`;
+};
+
 const genreText = (genre) => {
   if (genre.length > 1) {
     return 'Genres';
@@ -28,7 +35,10 @@ const createFilmDetailsElement = (film) => {
     country,
     genres,
     description,
-    comments
+    comments,
+    watchlist,
+    watched,
+    favourite
   } = film;
 
   const genresElemet = genres.map(createGenreElement).join('');
@@ -75,9 +85,9 @@ const createFilmDetailsElement = (film) => {
           </div>
 
           <section class="film-details__controls">
-            <button type="button" class="film-details__control-button film-details__control-button--watchlist" id="watchlist" name="watchlist">Add to watchlist</button>
-            <button type="button" class="film-details__control-button film-details__control-button--active film-details__control-button--watched" id="watched" name="watched">Already watched</button>
-            <button type="button" class="film-details__control-button film-details__control-button--favorite" id="favorite" name="favorite">Add to favorites</button>
+            ${createFilmControlButton('Add to watchlist', 'watchlist', watchlist)}
+            ${createFilmControlButton('Already watched', 'watched', watched)}
+            ${createFilmControlButton('Add to favorites', 'favourite', favourite)}
           </section>
         </div>
 

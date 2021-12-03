@@ -6,13 +6,13 @@ import {createFilmCardElement} from './view/film-card-view.js';
 import {createShowMoreButtonElement} from './view/show-more-buttom-view.js';
 import {createFooterStatisticsElement} from './view/footer-statistics-view.js';
 import {createFilmDetailsElement, createCommentsElement} from './view/film-details-view.js';
-import {generateFilm} from './mock/films-data.js';
+import {generateFilms} from './mock/films-data.js';
 import {generateComments} from './mock/comments-data.js';
 
 const FILMS_COUNT = 28;
 const MAX_FILMS_LINE = 5;
 
-const films = Array.from({length: FILMS_COUNT}, generateFilm);
+const films = Array.from({length: FILMS_COUNT}, generateFilms);
 const comments = Array.from({length: films[0].comments.length}, generateComments);
 // console.log(films);
 // console.log(comments);
