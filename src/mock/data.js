@@ -112,6 +112,23 @@ const FILM_GENRES = [
   'Mystery'
 ];
 
+const COMMENTS_TEXT = [
+  'Interesting setting and a good cast',
+  'Booooooooooring',
+  'Very very old. Meh',
+  'Almost two hours? Seriously?',
+  'LOL'
+];
+
+const EMOJI_DIR = '/images/emoji/';
+
+const EMOJI = [
+  'angry',
+  'puke',
+  'sleeping',
+  'smile'
+];
+
 export {
   POSTERS_DIR,
   FILMS_TITLES_AND_POSTERS,
@@ -120,5 +137,8 @@ export {
   FILM_WRITERS,
   FILM_ACTORS,
   FILM_COUNTRY,
-  FILM_GENRES
+  FILM_GENRES,
+  COMMENTS_TEXT,
+  EMOJI,
+  EMOJI_DIR
 };

@@ -1,32 +1,21 @@
+import {
+  COMMENTS_TEXT,
+  EMOJI,
+  EMOJI_DIR
+} from './data.js';
+
 import {getRandomInteger} from '../utils.js';
 
-const EMOJI_DIR = '/images/emoji/';
-
 const generateTextComments = () => {
-  const textComments = [
-    'Interesting setting and a good cast',
-    'Booooooooooring',
-    'Very very old. Meh',
-    'Almost two hours? Seriously?',
-    'LOL'
-  ];
+  const randomIndex = getRandomInteger(0, COMMENTS_TEXT.length - 1);
 
-  const randomIndex = getRandomInteger(0, textComments.length - 1);
-
-  return textComments[randomIndex];
+  return COMMENTS_TEXT[randomIndex];
 };
 
 const generateEmoji= () => {
-  const emoji = [
-    'angry',
-    'puke',
-    'sleeping',
-    'smile'
-  ];
+  const randomIndex = getRandomInteger(0, EMOJI.length - 1);
 
-  const randomIndex = getRandomInteger(0, emoji.length - 1);
-
-  return emoji[randomIndex];
+  return EMOJI[randomIndex];
 };
 
 const generateComments = () => {
