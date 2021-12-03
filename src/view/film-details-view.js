@@ -15,7 +15,19 @@ const genreText = (genre) => {
 };
 
 const createFilmDetailsElement = (film) => {
-  const {title, poster, description, genres, comments} = film;
+  const {
+    title,
+    poster,
+    ratingAge,
+    ratingTotal,
+    director,
+    writers,
+    actors,
+    country,
+    genres,
+    description,
+    comments
+  } = film;
 
   const genresElemet = genres.map(createGenreElement).join('');
 
@@ -29,7 +41,7 @@ const createFilmDetailsElement = (film) => {
             <div class="film-details__poster">
               <img class="film-details__poster-img" src="${poster}" alt="">
 
-              <p class="film-details__age">18+</p>
+              <p class="film-details__age">${ratingAge}+</p>
             </div>
 
             <div class="film-details__info">
@@ -40,23 +52,14 @@ const createFilmDetailsElement = (film) => {
                 </div>
 
                 <div class="film-details__rating">
-                  <p class="film-details__total-rating">8.9</p>
+                  <p class="film-details__total-rating">${ratingTotal}</p>
                 </div>
               </div>
 
               <table class="film-details__table">
-                <tr class="film-details__row">
-                  <td class="film-details__term">Director</td>
-                  <td class="film-details__cell">Anthony Mann</td>
-                </tr>
-                <tr class="film-details__row">
-                  <td class="film-details__term">Writers</td>
-                  <td class="film-details__cell">Anne Wigton, Heinz Herald, Richard Weil</td>
-                </tr>
-                <tr class="film-details__row">
-                  <td class="film-details__term">Actors</td>
-                  <td class="film-details__cell">Erich von Stroheim, Mary Beth Hughes, Dan Duryea</td>
-                </tr>
+                ${createFilmDetailsRow('Director', director)}
+                ${createFilmDetailsRow('Writers', writers)}
+                ${createFilmDetailsRow('Actors', actors)}
                 <tr class="film-details__row">
                   <td class="film-details__term">Release Date</td>
                   <td class="film-details__cell">30 March 1945</td>
@@ -65,10 +68,7 @@ const createFilmDetailsElement = (film) => {
                   <td class="film-details__term">Runtime</td>
                   <td class="film-details__cell">1h 18m</td>
                 </tr>
-                <tr class="film-details__row">
-                  <td class="film-details__term">Country</td>
-                  <td class="film-details__cell">USA</td>
-                </tr>
+                ${createFilmDetailsRow('Country', country)}
                 ${createFilmDetailsRow(genreText(genres), genresElemet)}
               </table>
 
