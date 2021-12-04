@@ -17,12 +17,30 @@ const comments = Array.from({length: films[0].comments.length}, generateComments
 // console.log(films);
 // console.log(comments);
 
+const getBooleanCount = (name) => {
+  let count = 0;
+
+  for (const film of films) {
+    if (film[name] === true) {
+      count++;
+    }
+  }
+
+  return count;
+};
+
+const getWatchlistCount = getBooleanCount('watchlist');
+const getWatchedCount = getBooleanCount('watched');
+const getFavoriteCount = getBooleanCount('favorite');
+
+// console.log(getWatchlistCount, getWatchedCount, getFavoriteCount);
+
 const headerElement = document.querySelector('.header');
 const mainElement = document.querySelector('.main');
 const footerElement = document.querySelector('.footer');
 
 renderTemplate(headerElement, createProfileElement(), RenderPosition.BEFOREEND);
-renderTemplate(mainElement, createNavElement(), RenderPosition.BEFOREEND);
+renderTemplate(mainElement, createNavElement(getWatchlistCount, getWatchedCount, getFavoriteCount), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createSortElement(), RenderPosition.BEFOREEND);
 renderTemplate(mainElement, createFilmsListElement(), RenderPosition.BEFOREEND);
 

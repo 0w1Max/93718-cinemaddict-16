@@ -14,7 +14,7 @@ const createFilmDetailsControlButton = (title, nameButton, isActive) => {
   id="${nameButton}" name="${nameButton}">${title}</button>`;
 };
 
-const genreText = (genre) => {
+const selectGenreText = (genre) => {
   if (genre.length > 1) {
     return 'Genres';
   }
@@ -75,7 +75,7 @@ const createFilmDetailsElement = (film) => {
                 ${createFilmDetailsRow('Release Date', releaseDate.format('DD MMMM YYYY'))}
                 ${createFilmDetailsRow('RunTime', runTime)}
                 ${createFilmDetailsRow('Country', country)}
-                ${createFilmDetailsRow(genreText(genres), genresElemet)}
+                ${createFilmDetailsRow(selectGenreText(genres), genresElemet)}
               </table>
 
               <p class="film-details__film-description">
